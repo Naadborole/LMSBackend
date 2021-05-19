@@ -112,7 +112,7 @@
                       style="margin-bottom: 4px"
                       id="name1"
                     >
-                      Naad Borole
+                      Aniket Rathod
                     </h3>
                     <p
                       class="
@@ -221,7 +221,7 @@
                       style="margin-bottom: 4px"
                       id="name2"
                     >
-                      Naad Borole
+                      Aniket Rathod
                     </h3>
                     <p
                       class="
@@ -330,7 +330,7 @@
                       style="margin-bottom: 4px"
                       id="name3"
                     >
-                      Naad Borole
+                      Aniket rathod
                     </h3>
                     <p
                       class="
@@ -435,5 +435,82 @@
       </div>
     </div>
   </body>
+  <script>
+    const AppList = ${arr};
+    let currstartind = 0;
+    console.log(AppList);
+    $("#prev").attr("disabled", true);
+    if(AppList.length-1 <= currstartind+2){
+      $("#next").attr("disabled", true);
+    }
+    updateUIList(AppList, 0);
+
+    function prev(){
+      currstartind -= 3;
+      currstartind = Math.max(0, currstartind);
+      updateUIList(AppList, currstartind);
+      if(currstartind == 0){
+        $("#prev").attr("disabled", true);
+      }
+      else{
+        $("#prev").attr("disabled", false);
+      }
+      if(currstartind < AppList.length){
+        $("#next").attr("disabled", false);
+      }
+    }
+
+function next(){
+  currstartind += 3;
+  currstartind = Math.min(AppList.length-1, currstartind);
+  updateUIList(AppList, currstartind);
+  if(currstartind == AppList.length-1){
+    $("#next").attr("disabled", true);
+  }
+  else{
+    $("#next").attr("disabled", false);
+  }
+  if(currstartind>=2){
+    $("#prev").attr("disabled", false);
+  }
+}
+function updateUIList(Applist, indexstart){
+    indexstart = Math.min(Applist.length-1, indexstart);
+    indexEnd = Math.min(indexstart+2, Applist.length-1);
+    let entrynum = 1;
+    $('#entry1').show();
+    $('#entry2').show();
+    $('#entry3').show();
+    for(let i = indexstart; i<=indexEnd; i++){
+      let obj = Applist[i];
+      $("#name"+entrynum).html(obj.Name);
+      $("#email"+entrynum).html(obj.From);
+      $("#from"+entrynum).html(obj.DateFrom);
+      $("#to"+entrynum).html(obj.DateTo);
+      $("#Type"+entrynum).html(obj.Type);
+      $("#Status"+entrynum).html(obj.Status);
+      $("#Status"+entrynum).removeClass("text-info");
+      $("#Status"+entrynum).removeClass("text-danger");
+      $("#Status"+entrynum).removeClass("text-success");
+      switch(obj.Status){
+        case "Approved":{
+          $("#Status"+entrynum).addClass("text-success");
+        } break;
+        case "Pending":{
+          $("#Status"+entrynum).addClass("text-info");
+        } break;
+        case "Rejected":{
+          $("#Status"+entrynum).addClass("text-danger");
+        } break;
+      }
+      entrynum++;
+    }
+    if(entrynum < 4){
+      for(let i=entrynum; i<=3; i++){
+        $("#entry"+i).hide();
+      }
+    }
+}
+  </script>
   <script src="UpdateRecentRequestList.js"></script>
 </html>

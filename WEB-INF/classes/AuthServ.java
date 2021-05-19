@@ -25,10 +25,24 @@ public class AuthServ extends HttpServlet {
         if (doc == null) {
             out.print("{Auth: \"NOTOK\", Error:\"User Does not exist\" }");
         } else if (password.equals(doc.get("Password"))) {
-            out.print("{Auth: OK}");
+            String found = "[";
+            MongoCollection<Document> col = db.getCollection("Requests");
+            int num = 0;
+            for(Document curr: col.find(Filters.eq("From", email))){
+                num++;
+                found += curr.toJson() + ",";
+            }
+            found += "]";
+            out.print(found);
+            req.setAttribute("arr", found);
+            req.setAttribute("num": num);
+            req.getRequestDispatcher("home.jsp").forward(req, response);
+
         } else {
             out.print("{Auth: NOTOK, Error:\"Wrong Password\"}");
         }
         out.flush();
     }
+
+
 }
