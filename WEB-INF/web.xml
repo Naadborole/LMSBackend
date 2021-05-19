@@ -1,0 +1,10 @@
+<web-app>
+    <servlet>
+        <servlet-name>AuthServ</servlet-name>
+        <servlet-class>AuthServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServ</servlet-name>
+        <url-pattern>/Auth</url-pattern>
+    </servlet-mapping>
+</web-app>
