@@ -39,4 +39,12 @@
         <servlet-name>AdminHomeServ</servlet-name>
         <url-pattern>/AdminHome</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EmpSignUp</servlet-name>
+        <servlet-class>EmployeeSignUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmpSignUp</servlet-name>
+        <url-pattern>/ESignUp</url-pattern>
+    </servlet-mapping>
 </web-app>

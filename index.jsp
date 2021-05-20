@@ -92,7 +92,7 @@
             ------
             -------
             -->
-            <form class="needs-validation">
+            <form class="needs-validation" action = "ESignUp" method="POST">
               <div class="mb-3">
                 <label for="Email2" class="form-label"
                   >Email address</label
@@ -102,6 +102,7 @@
                   class="form-control"
                   id="Email2"
                   aria-describedby="emailHelp"
+                  name= "regEm"
                   required
                 />
                 <div class="valid-feedback" id="valid-for-Email2">Looks good!</div>
@@ -111,13 +112,13 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" id="fname" />
+                    <input type="text" class="form-control" id="fname" name = "fname"/>
                     <div class="valid-feedback" id="valid-for-fname">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-fname">This field cannot be empty</div>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" id="lname" />
+                    <input type="text" class="form-control" id="lname" name = "lname"/>
                     <div class="valid-feedback" id="valid-for-lname">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-lname">This field cannot be empty</div>
                   </div>
@@ -129,13 +130,14 @@
                   type="password"
                   class="form-control"
                   id="passwd2"
+                  name = "regpasswd"
                   aria-describedby="emailHelp"
                 />
                 <div class="valid-feedback" id="valid-for-passwd2">Looks good!</div>
                 <div class="invalid-feedback" id="invalid-for-passwd2">Please choose a username.</div>
               </div>
               <br />
-              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email2', 'passwd2')">Register</button>
+              <button type="submit" id="regbtn" class="btn btn-red center-btn" onclick="checkValidityLogin('Email2', 'passwd2')">Register</button>
             </form>
             <!-- REGISTER FORM END
             ---------
@@ -171,12 +173,10 @@
   });
 })();
 
-<%
-  String error = (String)session.getAttribute("error"); 
-  if(error != null){
-    out.println("alert(" + error+");");
-  }
-%>
+let mssg = "${error}";
+if(mssg != "" && mssg != "null"){
+  alert(mssg);
+}
 
 document.getElementById("subtn").addEventListener("click", function(event){
   if(!CheckValidityRequestForm()){
@@ -186,5 +186,15 @@ document.getElementById("subtn").addEventListener("click", function(event){
   else{
   }
 })
+
+document.getElementById("regbtn").addEventListener("click", function(event){
+  if(!CheckValidityLogin()){
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  else{
+  }
+})
+
   </script>
 </html>
