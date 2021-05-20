@@ -24,31 +24,57 @@
     <h1 class="title">Leave Management System</h1>
     <div class="row main row-flex">
       <div class="col-md">
-        <div class="card card-pad h-auto w-75 mx-auto card-shadow" style="border-color: #e00">
+        <!-- <div class="card card-pad h-auto w-75 mx-auto card-shadow" style="border-color: #e00">
           <div class="row-flex">
             <div class="col-md-8">
               <h4 class="card-title">Naad Borole</h4>
-              <h5 class="card-subtitle mb-2 text-muted">naadborole2000@gmail.com</h5> 
+              <h5 class="card-subtitle mb-2 text-muted">naadborole2000@gmail.com</h5>
+              <h5 class="card-subtitle mb-2 text-muted">Assistant Professor</h5>
+              <h5 class="card-subtitle mb-2 text-muted">FE</h5> 
             </div>
             <div class="col-md-4 my-auto">
-              <h4 class="card-title">Request : Pending</h4>
+              <h4 class="card-title">Request : Pending</h4> -->
+              <!--<button class="btn btn-red mr-4" id="" onclick="">Accept</button>
+              <button class="btn btn-red" id="" onclick="">Decline</button>
             </div>
           </div>
-        </div>
+        </div> -->
         <br />
-        <div class="card card-pad h-auto w-75 mx-auto card-shadow" style="border-color: #e00">
+        <!-- <div class="card card-pad h-auto w-75 mx-auto card-shadow" style="border-color: #e00">
           <div class="row-flex">
             <div class="col-md-8">
               <h4 class="card-title">Aniket Rathod</h4>
-              <h5 class="card-subtitle mb-2 text-muted">abr63499@gmail.com</h5> 
+              <h5 class="card-subtitle mb-2 text-muted">abr63499@gmail.com</h5>
+              <h5 class="card-subtitle mb-2 text-muted">Assistant Professor</h5>
+              <h5 class="card-subtitle mb-2 text-muted">FE</h5> 
             </div>
             <div class="col-md-4 my-auto">
-              <h4 class="card-title">Request : Pending</h4>
+               <h4 class="card-title">Request : Pending</h4> -->
+              <!--<button class="btn btn-red mr-4" id="" onclick="">Accept</button>
+              <button class="btn btn-red" id="" onclick="">Decline</button>
             </div>
           </div>  
-        </div>
+        </div> -->
         <br />
       </div>
     </div>
   </body>
+
+   <script>
+    const arrData = ${arrMasterAdmin};
+    console.log(arrMasterAdmin);
+    insertList();
+    function insertList()
+    {
+      for(var i = 0 ; i < arrMasterAdmin.length ; i++)
+      {
+        var div1 = document.createElement('div');
+        div1.className = 'card card-pad h-auto w-75 mx-auto card-shadow';  
+        div1.innerHTML = '<div class="row-flex"><div class="col-md-8"><h4 class="card-title" id="memberAdminName">'+arrMasterAdmin[i].FirstName+" "+arrMasterAdmin[i].LastName+'</h4><h5 class="card-subtitle mb-2 text-muted" id="memberAdminEmail">'+arrMasterAdmin[i].Email+'</h5> <h5 class="card-subtitle mb-2 text-muted" id="memberAdminTitle">'+arrMasterAdmin[i].Title+'</h5> <h5 class="card-subtitle mb-2 text-muted" id="memberAdminDept">'+arrMasterAdmin[i].Department+'</h5> </div><div class="col-md-4 my-auto"><button class="btn btn-red mr-4" id="acceptRequest" onclick="">Accept</button><button class="btn btn-red" id="rejectRequest" onclick="">Decline</button></div></div>';
+        $(".col-md").append(div1);
+        $(".col-md").append('<br/>')
+      }
+    }
+  </script> 
+
 </html>

@@ -94,7 +94,7 @@
             ------
             -------
             -->
-            <form class="needs-validation">
+            <form class="needs-validation" action="AdSignUp" method="POST">
               <div class="mb-3">
                 <label for="Email2" class="form-label"
                   >Email address</label
@@ -104,6 +104,7 @@
                   class="form-control"
                   id="Email2"
                   aria-describedby="emailHelp"
+                  name="AdminEmail"
                   required
                 />
                 <div class="valid-feedback" id="valid-for-Email2">Looks good!</div>
@@ -113,13 +114,13 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" id="fname" />
+                    <input type="text" class="form-control" id="fname" name="Adminfname" />
                     <div class="valid-feedback" id="valid-for-fname">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-fname">This field cannot be empty</div>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" id="lname" />
+                    <input type="text" class="form-control" id="lname" name="Adminlname" />
                     <div class="valid-feedback" id="valid-for-lname">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-lname">This field cannot be empty</div>
                   </div>
@@ -129,13 +130,13 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="dept">Department</label>
-                    <input type="text" class="form-control" id="dept" />
+                    <input type="text" class="form-control" id="dept" name="Admindept" />
                     <div class="valid-feedback" id="valid-for-dept">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-dept">This field cannot be empty</div>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" />
+                    <input type="text" class="form-control" id="title" name="Admintilte" />
                     <div class="valid-feedback" id="valid-for-title">Looks good!</div>
                     <div class="invalid-feedback" id="invalid-for-title">This field cannot be empty</div>
                   </div>
@@ -148,12 +149,13 @@
                   class="form-control"
                   id="passwd2"
                   aria-describedby="emailHelp"
+                  name="AdminPass"
                 />
                 <div class="valid-feedback" id="valid-for-passwd2">Looks good!</div>
                 <div class="invalid-feedback" id="invalid-for-passwd2">Please choose a username.</div>
               </div>
               <br />
-              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email2', 'passwd2')">Register</button>
+              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email2', 'passwd2')" id="AdminRegbtn">Register</button>
             </form>
             <!-- REGISTER FORM END
             ---------
@@ -166,8 +168,43 @@
     </div>
   </body>
   <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+
+    let mssg = "${AdminErrorMsg}";
+    if(mssg != "" && mssg != "null"){
+      alert(mssg);
+    }
       document.getElementById("adminLogin").addEventListener("click", function(event){
       if(!CheckValidityRequestForm()){
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      else{
+      }
+    })
+
+    document.getElementById("AdminRegbtn").addEventListener("click", function(event){
+      if(!CheckValidityLogin()){
         event.preventDefault();
         event.stopPropagation();
       }

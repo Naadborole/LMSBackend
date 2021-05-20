@@ -22,7 +22,9 @@ public class AdminAuthServ extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         if (!MongoConnect.AdminAuthenticate(email, password)) {
-            out.print("{Auth: \"NOTOK\", Error:\"Invalid username or password!\" }");
+            //out.print("{Auth: \"NOTOK\", Error:\"Invalid username or password!\" }");
+            req.setAttribute("AdminErrorMsg", "Invalid username or password");
+            req.getRequestDispatcher("AdminIndex.jsp").forward(req, response);
         } else {
             HttpSession ses = req.getSession();
             ses.setAttribute("email", email);

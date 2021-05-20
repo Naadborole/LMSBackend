@@ -2,6 +2,7 @@ import java.io.*;
 import com.mongodb.client.*;
 import org.bson.*;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 
 
 public class MongoConnect {
@@ -9,6 +10,7 @@ public class MongoConnect {
     private static MongoDatabase db;
     private static MongoCollection<Document> collection;
     private static MongoCollection<Document> collectionAdmin;
+    private static MongoCollection<Document> collectionMaster;
 
     MongoConnect(){
         client = MongoClients.create(
@@ -16,6 +18,7 @@ public class MongoConnect {
         db = client.getDatabase("LMS");
         collection = db.getCollection("Employee");
         collectionAdmin = db.getCollection("Admin");
+        collectionMaster = db.getCollection("MasterAdmin");
     }
 
     public static Boolean Authenticate(String user, String pass){
@@ -86,5 +89,28 @@ public class MongoConnect {
         doc = doc.append("Password", passwd);
         doc = doc.append("AD", false);
         collection.insertOne(doc);
+    }
+
+    public static void InsertAdminToMaster(String email, String fname, String lname, String dept, String title, String passwd){
+        Document doc = new Document("Email", email);
+        doc = doc.append("FirstName", fname);
+        doc = doc.append("LastName", lname);
+        doc = doc.append("Department", dept);
+        doc = doc.append("Title", title);
+        doc = doc.append("Password", passwd);
+        doc = doc.append("Status","Pending");
+        //collectionMaster.insertOne(doc);
+        collectionMaster.updateOne(Filters.eq("Email", "masteradmin@lmsSys2104.com"),Updates.addToSet("Requests", doc));
+    }
+
+    public static String getMembersUnderMasterAdmin(String AdminUser){
+        Document doc = collectionMaster.find(Filters.eq("Email", AdminUser)).first();
+        String data = "[";
+        MongoCollection<Document> col = db.getCollection("MasterAdmin");
+        for(Document curr: col.find(Filters.eq("Requests.Status", "Pending"))){
+            data += curr.toJson() + ",";
+        }
+        data += "]";
+        return data;
     }
 }

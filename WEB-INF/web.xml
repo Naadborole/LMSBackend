@@ -47,4 +47,19 @@
         <servlet-name>EmpSignUp</servlet-name>
         <url-pattern>/ESignUp</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminSignUp</servlet-name>
+        <servlet-class>AdminSignUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminSignUp</servlet-name>
+        <url-pattern>/AdSignUp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MasterAdminListServ</servlet-name>
+        <servlet-class>MasterAdminListServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MasterAdminListServ</servlet-name>
+        <url-pattern>/MasterAdminList</url-pattern>
 </web-app>
