@@ -14,6 +14,8 @@ public class AdminHomeServ extends HttpServlet {
             req.getRequestDispatcher("AdminIndex.jsp").forward(req, response);    
         }
         req.setAttribute("email", email);
+        String data = MongoConnect.getAdminPendingLeaves(email);
+        req.setAttribute("PendingLeaves", data);
         req.getRequestDispatcher("AdminDashboard.jsp").forward(req, response);
     }
 }

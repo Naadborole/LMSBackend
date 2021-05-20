@@ -58,6 +58,16 @@ public class MongoConnect {
         return found;
     }
 
+    public static String getAdminPendingLeaves(String AdminUser){
+        String found = "[";
+        MongoCollection<Document> col = db.getCollection("Requests");
+        for (Document curr : col.find(Filters.eq("To", AdminUser))) {
+            found += curr.toJson() + ",";
+        }
+        found += "]";
+        return found;
+    }
+
     public static String getMembersUnderAdmin(String AdminUser){
         Document doc = collectionAdmin.find(Filters.eq("Email", AdminUser)).first();
         String data = "[";
