@@ -10,7 +10,7 @@ public class AdminAuthServ extends HttpServlet {
     // private MongoDatabase db;
     // private MongoCollection<Document> collection;
 
-    public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         // client = MongoClients.create(
         //         "mongodb+srv://LMS:KMORIa3UZlTcon62@onlib.i34wm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         // db = client.getDatabase("LMS");
