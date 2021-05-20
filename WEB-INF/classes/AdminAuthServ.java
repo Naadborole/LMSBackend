@@ -5,7 +5,7 @@ import com.mongodb.client.*;
 import org.bson.*;
 import com.mongodb.client.model.Filters;
 
-public class AuthServ extends HttpServlet {
+public class AdminAuthServ extends HttpServlet {
     private MongoClient client;
     private MongoDatabase db;
     private MongoCollection<Document> collection;
@@ -14,7 +14,7 @@ public class AuthServ extends HttpServlet {
         client = MongoClients.create(
                 "mongodb+srv://LMS:KMORIa3UZlTcon62@onlib.i34wm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         db = client.getDatabase("LMS");
-        collection = db.getCollection("Employee");
+        collection = db.getCollection("Admin");
         
         String email = req.getParameter("email").trim();
         String password = req.getParameter("password").trim();
@@ -25,18 +25,18 @@ public class AuthServ extends HttpServlet {
         if (doc == null) {
             out.print("{Auth: \"NOTOK\", Error:\"User Does not exist\" }");
         } else if (password.equals(doc.get("Password"))) {
-            String found = "[";
-            MongoCollection<Document> col = db.getCollection("Requests");
+            String data = "[";
+            MongoCollection<Document> col = db.getCollection("Employee");
             int num = 0;
-            for(Document curr: col.find(Filters.eq("From", email))){
+            for(Document curr: col.find(Filters.eq("Department", doc.get("Department")))){
                 num++;
-                found += curr.toJson() + ",";
+                data += curr.toJson() + ",";
             }
-            found += "]";
-            out.print(found);
-            req.setAttribute("arr", found);
-            req.setAttribute("num", num);
-            req.getRequestDispatcher("home.jsp").forward(req, response);
+            data += "]";
+            out.print(data);
+            req.setAttribute("arrAdmin", data);
+            req.setAttribute("numAdmin", num);
+            req.getRequestDispatcher("Members.jsp").forward(req, response);
 
         } else {
             out.print("{Auth: NOTOK, Error:\"Wrong Password\"}");

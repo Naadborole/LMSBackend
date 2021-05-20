@@ -7,4 +7,12 @@
         <servlet-name>AuthServ</servlet-name>
         <url-pattern>/Auth</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminAuthServ</servlet-name>
+        <servlet-class>AdminAuthServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAuthServ</servlet-name>
+        <url-pattern>/AdminAuth</url-pattern>
+    </servlet-mapping>
 </web-app>
