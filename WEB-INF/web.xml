@@ -29,6 +29,14 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminMemListServ</servlet-name>
+        <url-pattern>/EmployeeUnderAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminHomeServ</servlet-name>
+        <servlet-class>AdminHomeServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminHomeServ</servlet-name>
         <url-pattern>/AdminHome</url-pattern>
     </servlet-mapping>
 </web-app>

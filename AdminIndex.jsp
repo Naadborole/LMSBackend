@@ -38,7 +38,7 @@
             ------
             --------
             -->
-            <form class = "needs-validation" id="LoginForm">
+            <form class = "needs-validation" id="LoginForm" action="AdminAuth" method="POST">
               <div class="mb-3">
                 <label for="Email1" class="form-label"
                   >Email address</label
@@ -48,6 +48,7 @@
                   class="form-control"
                   id="Email1"
                   aria-describedby="emailHelp"
+                  name="email"
                 />
                 <div class="valid-feedback" id="valid-for-Email1">Looks good!</div>
                 <div class="invalid-feedback" id="invalid-for-Email1">Please choose a username.</div>
@@ -59,12 +60,13 @@
                   class="form-control"
                   id="passwd1"
                   aria-describedby="emailHelp"
+                  name="password"
                 />
                 <div class="valid-feedback" id="valid-for-passwd1">Looks good!</div>
                 <div class="invalid-feedback" id="invalid-for-passwd1">Please choose a username.</div>
               </div>
               <br />
-              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email1', 'passwd1') ">Login</button>
+              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email1', 'passwd1') " id="adminLogin">Login</button>
             </form>
             <!-- LOGIN FORM END
             --------
@@ -163,4 +165,14 @@
       </div>
     </div>
   </body>
+  <script>
+      document.getElementById("adminLogin").addEventListener("click", function(event){
+      if(!CheckValidityRequestForm()){
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      else{
+      }
+    })
+  </script>
 </html>

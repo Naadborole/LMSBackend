@@ -18,8 +18,8 @@
 
   <body>
     <ul class="nav-ul">
-      <li class="nav-li active"><a class="nav-a" href="AdminDashboard.html">Home</a></li>
-      <li class="nav-li "><a class="nav-a" href="Members.jsp">Members</a></li>
+      <li class="nav-li active"><a class="nav-a" href="AdminDashboard.jsp">Home</a></li>
+      <li class="nav-li "><a class="nav-a" href="/EmployeeUnderAdmin">Members</a></li>
       <li class="nav-li "><a class="nav-a" href="Requests.html">Requests</a></li>
     </ul>
     <h1 class="title">Leave Management System</h1>
