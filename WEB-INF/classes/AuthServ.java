@@ -7,7 +7,7 @@ import com.mongodb.client.model.Filters;
 
 public class AuthServ extends HttpServlet {
 
-    public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         MongoConnect c = new MongoConnect();
         String email = req.getParameter("email").trim();
         String password = req.getParameter("password").trim();
@@ -15,7 +15,8 @@ public class AuthServ extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         if (!MongoConnect.Authenticate(email, password)) {
-            out.print("{Auth: \"NOTOK\", Error:\"Invalid username or password!\" }");
+            req.setAttribute("error", "Invalid username or password");
+            req.getRequestDispatcher("index.jsp").forward(req, response);
         } else {
             HttpSession ses = req.getSession();
             ses.setAttribute("email", email);

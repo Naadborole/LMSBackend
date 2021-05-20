@@ -12,7 +12,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <script src="validation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="black-back">
     <h1 class="title threeD">Leave Management System</h1>
@@ -37,7 +37,7 @@
             ------
             --------
             -->
-            <form class = "needs-validation" id="LoginForm">
+            <form class = "needs-validation" id="LoginForm" action = "Auth" method="post">
               <div class="mb-3">
                 <label for="Email1" class="form-label"
                   >Email address</label
@@ -46,6 +46,7 @@
                   type="email"
                   class="form-control"
                   id="Email1"
+                  name = "email"
                   aria-describedby="emailHelp"
                 />
                 <div class="valid-feedback" id="valid-for-Email1">Looks good!</div>
@@ -56,6 +57,7 @@
                 <input
                   type="password"
                   class="form-control"
+                  name = "password"
                   id="passwd1"
                   aria-describedby="emailHelp"
                 />
@@ -63,7 +65,7 @@
                 <div class="invalid-feedback" id="invalid-for-passwd1">Please choose a username.</div>
               </div>
               <br />
-              <button type="submit" class="btn btn-red center-btn" onclick="checkValidityLogin('Email1', 'passwd1') ">Login</button>
+              <button type="submit" id = "subtn" class="btn btn-red center-btn" onclick="checkValidityLogin('Email1', 'passwd1')">Login</button>
             </form>
             <!-- LOGIN FORM END
             --------
@@ -145,4 +147,44 @@
       </div>
     </div>
   </body>
+  <script src="validation.js"></script>
+  <script>
+  (() => {
+  "use strict";
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll(".needs-validation");
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener(
+      "submit",
+      (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+
+<%
+  String error = (String)session.getAttribute("error"); 
+  if(error != null){
+    out.println("alert(" + error+");");
+  }
+%>
+
+document.getElementById("subtn").addEventListener("click", function(event){
+  if(!CheckValidityRequestForm()){
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  else{
+  }
+})
+  </script>
 </html>
