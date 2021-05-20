@@ -1,15 +1,9 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-<<<<<<< HEAD
         "WEB-INF/classes/bson-4.1.1.jar",
         "WEB-INF/classes/mongodb-driver-core-4.1.1.jar",
         "WEB-INF/classes/mongodb-driver-sync-4.1.1.jar",
-=======
-        "WEB-INF/lib/bson-4.1.1.jar",
-        "WEB-INF/lib/mongodb-driver-core-4.1.1.jar",
-        "WEB-INF/lib/mongodb-driver-sync-4.1.1.jar",
->>>>>>> 1813b64b49ae9b666dd1534444c0e59cdb04f4d6
         "WEB-INF/classes/servlet-api.jar",
         "WEB-INF/classes/slf4j-api-1.7.6.jar"
     ]
