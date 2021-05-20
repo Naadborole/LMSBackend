@@ -79,4 +79,12 @@ public class MongoConnect {
         return data;
     }
 
+    public static void InsertEmployee(String email, String fname, String lname, String passwd){
+        Document doc = new Document("Email", email);
+        doc = doc.append("FirstName", fname);
+        doc = doc.append("LastName", lname);
+        doc = doc.append("Password", passwd);
+        doc = doc.append("AD", false);
+        collection.insertOne(doc);
+    }
 }
