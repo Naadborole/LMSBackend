@@ -17,10 +17,8 @@ public class AuthServ extends HttpServlet {
         if (!MongoConnect.Authenticate(email, password)) {
             out.print("{Auth: \"NOTOK\", Error:\"Invalid username or password!\" }");
         } else {
-            String found = MongoConnect.getRequest(email);
-            out.print(found);
-            req.setAttribute("arr", found);
-            req.getRequestDispatcher("home.jsp").forward(req, response);
+            req.getSession().setAttribute("email", email);
+            response.sendRedirect("Home");
         }
         out.flush();
     }

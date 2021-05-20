@@ -27,7 +27,7 @@ public class MongoConnect {
         return false;
     }
 
-    public static Document getUser(String user, String pass){
+    public static Document getUser(String user){
         return collection.find(Filters.eq("Email", user)).first();
     }
 

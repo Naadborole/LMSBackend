@@ -15,4 +15,12 @@
         <servlet-name>AdminAuthServ</servlet-name>
         <url-pattern>/AdminAuth</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>HomeServ</servlet-name>
+        <servlet-class>HomeServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServ</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
 </web-app>
