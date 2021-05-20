@@ -19,7 +19,7 @@ public class AuthServ extends HttpServlet {
         } else {
             HttpSession ses = req.getSession();
             ses.setAttribute("email", email);
-            ses.setMaxInactiveInterval(30*60);
+            ses.setMaxInactiveInterval(30*60); //30 min
             response.sendRedirect("Home");
         }
         out.flush();
