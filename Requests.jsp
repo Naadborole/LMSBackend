@@ -18,9 +18,9 @@
 
   <body>
     <ul class="nav-ul">
-      <li class="nav-li "><a class="nav-a" href="AdminDashboard.html">Home</a></li>
-      <li class="nav-li "><a class="nav-a" href="Members.jsp">Members</a></li>
-      <li class="nav-li active"><a class="nav-a" href="Requests.html">Requests</a></li>
+      <li class="nav-li "><a class="nav-a" href="AdminHome">Home</a></li>
+      <li class="nav-li "><a class="nav-a" href="EmployeeUnderAdmin?email=${email}">Members</a></li>
+      <li class="nav-li active"><a class="nav-a" href="Requests.jsp">Requests</a></li>
     </ul>
   </body>
 </html>
