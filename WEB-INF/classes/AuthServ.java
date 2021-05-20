@@ -20,10 +20,6 @@ public class AuthServ extends HttpServlet {
             String found = MongoConnect.getRequest(email);
             out.print(found);
             req.setAttribute("arr", found);
-<<<<<<< HEAD
-=======
-            req.setAttribute("num", num);
->>>>>>> 1813b64b49ae9b666dd1534444c0e59cdb04f4d6
             req.getRequestDispatcher("home.jsp").forward(req, response);
         }
         out.flush();
