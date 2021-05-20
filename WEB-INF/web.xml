@@ -23,4 +23,12 @@
         <servlet-name>HomeServ</servlet-name>
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminMemListServ</servlet-name>
+        <servlet-class>AdminMemListServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMemListServ</servlet-name>
+        <url-pattern>/AdminHome</url-pattern>
+    </servlet-mapping>
 </web-app>
