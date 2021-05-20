@@ -8,7 +8,7 @@ import com.mongodb.client.model.Filters;
 public class AdminMemListServ extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         MongoConnect c= new MongoConnect();
-        String email = req.getSession().getAttribute("email").toString().trim();
+        String email = req.getParameter("email").toString().trim();
         if(email == null){
             req.setAttribute("error", "Session expired please login again");
             req.getRequestDispatcher("AdminIndex.jsp").forward(req, response);    
