@@ -474,16 +474,17 @@ function next(){
     $("#prev").attr("disabled", false);
   }
 }
+
 function updateUIList(Applist, indexstart){
-    indexstart = Math.min(Applist.length-1, indexstart);
-    indexEnd = Math.min(indexstart+2, Applist.length-1);
-    let entrynum = 1;
     $("#entry1").hide();
     $("#entry2").hide();
     $("#entry3").hide();
+    indexstart = Math.min(Applist.length-1, indexstart);
+    indexEnd = Math.min(indexstart+2, Applist.length-1);
+    let entrynum = 1;
     for(let i = indexstart; i<=indexEnd; i++){
       let obj = Applist[i];
-      $("#entry"+i).show();
+      $("#entry"+entrynum).show();
       $("#name"+entrynum).html(obj.Name);
       $("#email"+entrynum).html(obj.From);
       $("#from"+entrynum).html(obj.DateFrom);
