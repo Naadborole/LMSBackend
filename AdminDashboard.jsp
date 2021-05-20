@@ -28,18 +28,242 @@
             <div class="card card-pad h-100" style="border-color: #e00">
                 <h3 style="color: #e00; font-weight: 800">Pending Leaves</h3>
                 <br />
-                    <div class="row w-100 h-25" style="margin-bottom: 15px">
-                        <div class="card w-100 h-100" style="border-color: #e00""> 
+                <div class="row h-25" style="margin-bottom: 15px">
+                  <div class="card w-100 h-100 card-shadow">
+                    <div class="card-body" style="padding: 0px" id="entry1">
+                      <div class="row h-100" style="margin: 0px">
+                        <div class="col d-flex flex-column justify-content-lg-center"
+                          style="padding-right: 10px; padding-top: 0px">
+                          <h3 class="text-left smallfont" style="margin-bottom: 4px" id="name1">
+                            Aniket Rathod
+                          </h3>
+                          <p class="
+                                text-muted
+                                d-lg-flex
+                                align-self-start
+                                justify-content-lg-start
+                                align-items-lg-center
+                                smallfontem
+                              " id="email1">
+                            naad.borole2000@gmail.com
+                          </p>
                         </div>
-                    </div>
-                    <div class="row w-100 h-25" style="margin-bottom: 15px">
-                        <div class="card w-100 h-100" style="border-color: #e00"">
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            From
+                          </p>
+                          <p id="from1" class="smallfontem">21 Jul 2021</p>
                         </div>
-                    </div>
-                    <div class="row w-100 h-25">
-                        <div class="card w-100 h-100" style="border-color: #e00"">
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="
+                              padding-top: 0px;
+                              padding-right: 7px;
+                              padding-left: 7px;
+                            ">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            To
+                          </p>
+                          <p id="to1" class="smallfontem">24 Jul 2021</p>
                         </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            Type
+                          </p>
+                          <p id="Type1" class="smallfontem">Medical</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            ">
+                          <p style="margin-bottom: 8px" class="smallfontem">Status</p>
+                          <h3 class="text-info justify-content-center smallfontem2" id="Status1">
+                            Pending
+                          </h3>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+                <!-- SECOND ENTRY -->
+                <div class="row h-25" style="margin-bottom: 15px">
+                  <div class="card w-100 h-100 card-shadow">
+                    <div class="card-body" style="padding: 0px" id="entry2">
+                      <div class="row h-100" style="margin: 0px">
+                        <div class="col d-flex flex-column justify-content-lg-center"
+                          style="padding-right: 10px; padding-top: 0px">
+                          <h3 class="text-left smallfont" style="margin-bottom: 4px" id="name2">
+                            Aniket Rathod
+                          </h3>
+                          <p class="
+                                text-muted
+                                d-lg-flex
+                                align-self-start
+                                justify-content-lg-start
+                                align-items-lg-center
+                                smallfontem
+                              " id="email2">
+                            naad.borole2000@gmail.com
+                          </p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            From
+                          </p>
+                          <p id="from2" class="smallfontem">21 Jul 2021</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="
+                              padding-top: 0px;
+                              padding-right: 7px;
+                              padding-left: 7px;
+                            ">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            To
+                          </p>
+                          <p id="to2" class="smallfontem">24 Jul 2021</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            Type
+                          </p>
+                          <p id="Type2" class="smallfontem">Medical</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            ">
+                          <p style="margin-bottom: 8px">Status</p>
+                          <h3 class="text-info justify-content-center smallfontem2" id="Status2">
+                            Pending
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Third Entry -->
+                <div class="row h-25">
+                  <div class="card w-100 h-100 card-shadow">
+                    <div class="card-body" style="padding: 0px" id="entry3">
+                      <div class="row h-100" style="margin: 0px">
+                        <div class="col d-flex flex-column justify-content-lg-center"
+                          style="padding-right: 10px; padding-top: 0px">
+                          <h3 class="text-left smallfont" style="margin-bottom: 4px" id="name3">
+                            Aniket rathod
+                          </h3>
+                          <p class="
+                                text-muted
+                                d-lg-flex
+                                align-self-start
+                                justify-content-lg-start
+                                align-items-lg-center
+                                smallfontem
+                              " id="email3">
+                            naad.borole2000@gmail.com
+                          </p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            From
+                          </p>
+                          <p id="from3" class="smallfontem">21 Jul 2021</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="
+                              padding-top: 0px;
+                              padding-right: 7px;
+                              padding-left: 7px;
+                            ">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            To
+                          </p>
+                          <p id="to3" class="smallfontem">24 Jul 2021</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            " style="padding-right: 7px; padding-left: 7px">
+                          <p class="text-muted smallfontem" style="margin-bottom: 8px">
+                            Type
+                          </p>
+                          <p id="Type3" class="smallfontem">Medical</p>
+                        </div>
+                        <div class="
+                              col
+                              d-flex
+                              flex-column
+                              justify-content-center
+                              align-items-lg-center
+                            ">
+                          <p style="margin-bottom: 8px" class="smallfontem">Status</p>
+                          <h3 class="text-info justify-content-center smallfontem2" id="Status3">
+                            Pending
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row row-flex mt-4 justify-content-center">
+                  <button class="btn btn-red mr-4" id="prev" onclick="prev()">
+                    Prev
+                  </button>
+                  <button class="btn btn-red" id="next" onclick="next()">Next</button>
+                </div>
             </div>
         </div>
 
@@ -119,4 +343,82 @@
             </div>
           </div>
   </body>
+  <script>
+    const AppList = ${PendingLeaves};
+    let currstartind = 0;
+    console.log(AppList);
+    $("#prev").attr("disabled", true);
+    if(AppList.length-1 <= currstartind+2){
+      $("#next").attr("disabled", true);
+    }
+    updateUIList(AppList, 0);
+
+    function prev(){
+      currstartind -= 3;
+      currstartind = Math.max(0, currstartind);
+      updateUIList(AppList, currstartind);
+      if(currstartind == 0){
+        $("#prev").attr("disabled", true);
+      }
+      else{
+        $("#prev").attr("disabled", false);
+      }
+      if(currstartind < AppList.length){
+        $("#next").attr("disabled", false);
+      }
+    }
+
+function next(){
+  currstartind += 3;
+  currstartind = Math.min(AppList.length-1, currstartind);
+  updateUIList(AppList, currstartind);
+  if(currstartind == AppList.length-1){
+    $("#next").attr("disabled", true);
+  }
+  else{
+    $("#next").attr("disabled", false);
+  }
+  if(currstartind>=2){
+    $("#prev").attr("disabled", false);
+  }
+}
+function updateUIList(Applist, indexstart){
+    indexstart = Math.min(Applist.length-1, indexstart);
+    indexEnd = Math.min(indexstart+2, Applist.length-1);
+    let entrynum = 1;
+    $('#entry1').show();
+    $('#entry2').show();
+    $('#entry3').show();
+    for(let i = indexstart; i<=indexEnd; i++){
+      let obj = Applist[i];
+      $("#name"+entrynum).html(obj.Name);
+      $("#email"+entrynum).html(obj.From);
+      $("#from"+entrynum).html(obj.DateFrom);
+      $("#to"+entrynum).html(obj.DateTo);
+      $("#Type"+entrynum).html(obj.Type);
+      $("#Status"+entrynum).html(obj.Status);
+      $("#Status"+entrynum).removeClass("text-info");
+      $("#Status"+entrynum).removeClass("text-danger");
+      $("#Status"+entrynum).removeClass("text-success");
+      switch(obj.Status){
+        case "Approved":{
+          $("#Status"+entrynum).addClass("text-success");
+        } break;
+        case "Pending":{
+          $("#Status"+entrynum).addClass("text-info");
+        } break;
+        case "Rejected":{
+          $("#Status"+entrynum).addClass("text-danger");
+        } break;
+      }
+      entrynum++;
+    }
+    if(entrynum < 4){
+      for(let i=entrynum; i<=3; i++){
+        $("#entry"+i).hide();
+      }
+    }
+}
+  </script>
+
 </html>

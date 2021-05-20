@@ -10,10 +10,9 @@ public class AdminHomeServ extends HttpServlet {
             req.setAttribute("error", "Session expired please login again");
             req.getRequestDispatcher("AdminIndex.jsp").forward(req, response);    
         }
-        else{
-            email = email.trim();
-            req.setAttribute("email", email);
-            req.getRequestDispatcher("AdminDashboard.jsp").forward(req, response);
-        }
+        req.setAttribute("email", email);
+        String data = MongoConnect.getAdminPendingLeaves(email);
+        req.setAttribute("PendingLeaves", data);
+        req.getRequestDispatcher("AdminDashboard.jsp").forward(req, response);
     }
 }
