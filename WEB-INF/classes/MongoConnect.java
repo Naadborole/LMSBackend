@@ -61,7 +61,7 @@ public class MongoConnect {
     public static String getAdminPendingLeaves(String AdminUser){
         String found = "[";
         MongoCollection<Document> col = db.getCollection("Requests");
-        for (Document curr : col.find(Filters.eq("To", AdminUser))) {
+        for (Document curr : col.find(Filters.and(Filters.eq("To", AdminUser),Filters.eq("Status", "Pending")))) {
             found += curr.toJson() + ",";
         }
         found += "]";
