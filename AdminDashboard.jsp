@@ -386,7 +386,7 @@ function updateUIList(AppList, indexstart){
     $("#entry1").hide();
     $("#entry2").hide();
     $("#entry3").hide();
-    let indexstart = Math.min(AppList.length-1, indexstart);
+    indexstart = Math.min(AppList.length-1, indexstart);
     indexstart = Math.max(indexstart, 0);
     let indexEnd = Math.min(indexstart+2, AppList.length-1);
     let entrynum = 1;
