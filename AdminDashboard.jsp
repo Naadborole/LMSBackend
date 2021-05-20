@@ -382,15 +382,16 @@ function next(){
     $("#prev").attr("disabled", false);
   }
 }
-function updateUIList(Applist, indexstart){
-    indexstart = Math.min(Applist.length-1, indexstart);
-    indexEnd = Math.min(indexstart+2, Applist.length-1);
-    let entrynum = 1;
+function updateUIList(AppList, indexstart){
     $("#entry1").hide();
     $("#entry2").hide();
     $("#entry3").hide();
+    indexstart = Math.min(AppList.length-1, indexstart);
+    indexstart = Math.max(indexstart, 0);
+    indexEnd = Math.min(indexstart+2, AppList.length-1);
+    let entrynum = 1;
     for(let i = indexstart; i<=indexEnd; i++){
-      let obj = Applist[i];
+      let obj = AppList[i];
       $("#entry"+entrynum).show();
       $("#name"+entrynum).html(obj.Name);
       $("#email"+entrynum).html(obj.From);
