@@ -17,8 +17,8 @@
 
   <body>
     <ul class="nav-ul">
-      <li class="nav-li"><a class="nav-a" href="home.html">Home</a></li>
-      <li class="nav-li active"><a class="nav-a" href="#home">Dashboard</a></li>
+      <li class="nav-li"><a class="nav-a" href="Home">Home</a></li>
+      <li class="nav-li active"><a class="nav-a" href="">Dashboard</a></li>
     </ul>
     <div class="row main row-flex" style = "margin-top: 3em;">
         <div class = "col-8" >

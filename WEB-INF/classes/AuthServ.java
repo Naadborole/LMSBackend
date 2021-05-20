@@ -18,9 +18,12 @@ public class AuthServ extends HttpServlet {
             req.setAttribute("error", "Invalid username or password");
             req.getRequestDispatcher("index.jsp").forward(req, response);
         } else {
+            Cookie ck = new Cookie("user", email);
+            ck.setMaxAge(60*60);
             HttpSession ses = req.getSession();
             ses.setAttribute("email", email);
-            ses.setMaxInactiveInterval(30*60); //30 min
+            ses.setMaxInactiveInterval(30*60);
+            response.addCookie(ck);
             response.sendRedirect("Home");
         }
         out.flush();

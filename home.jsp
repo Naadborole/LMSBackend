@@ -18,9 +18,9 @@
 
   <body>
     <ul class="nav-ul">
-      <li class="nav-li active"><a class="nav-a" href="home.html">Home</a></li>
+      <li class="nav-li active"><a class="nav-a" href="Home">Home</a></li>
       <li class="nav-li">
-        <a class="nav-a" href="EmployeeDashboard.html">Dashboard</a>
+        <a class="nav-a" href="EmployeeDashboard.jsp">Dashboard</a>
       </li>
     </ul>
     <h1 class="title">Leave Management System</h1>

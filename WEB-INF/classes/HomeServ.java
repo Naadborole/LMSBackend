@@ -1,14 +1,12 @@
 import javax.servlet.http.*;
 import javax.servlet.*;
 import java.io.*;
-import com.mongodb.client.*;
 import org.bson.*;
-import com.mongodb.client.model.Filters;
 
 public class HomeServ extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         MongoConnect c= new MongoConnect();
-        String email = req.getSession().getAttribute("email").toString().trim();
+        String email = (String)req.getSession().getAttribute("email");
         if(email == null){
             req.setAttribute("error", "Session expired please login again");
             req.getRequestDispatcher("index.jsp").forward(req, response);    
