@@ -138,7 +138,7 @@ public class MongoConnect {
         doc = doc.append("Reason", reason);
         doc = doc.append("Type", type);
         doc = doc.append("Name", name);
-        Collection req = 
+         MongoCollection<Document> c = db.getCollection("Requests");
     }
 
 }

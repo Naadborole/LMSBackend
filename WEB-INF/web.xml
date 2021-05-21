@@ -70,7 +70,6 @@
     <servlet-mapping>
         <servlet-name>RequestEnter</servlet-name>
         <url-pattern>/ReqEnter</url-pattern>
-    </servlet-mapping>
     </servlet-mapping>   
     <servlet>
         <servlet-name>MemberRequestInfoServ</servlet-name>
