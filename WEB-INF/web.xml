@@ -71,4 +71,13 @@
         <servlet-name>RequestEnter</servlet-name>
         <url-pattern>/ReqEnter</url-pattern>
     </servlet-mapping>
+    </servlet-mapping>   
+    <servlet>
+        <servlet-name>MemberRequestInfoServ</servlet-name>
+        <servlet-class>MemberRequestInfoServ</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberRequestInfoServ</servlet-name>
+        <url-pattern>/MemberRequestInfo</url-pattern>
+    </servlet-mapping> 
 </web-app>

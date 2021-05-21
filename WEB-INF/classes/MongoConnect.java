@@ -1,6 +1,8 @@
 import java.io.*;
 import com.mongodb.client.*;
 import org.bson.*;
+import org.bson.types.ObjectId;
+
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 
@@ -107,6 +109,7 @@ public class MongoConnect {
         Document doc = collectionMaster.find(Filters.eq("Email", AdminUser)).first();
         String data = "[";
         MongoCollection<Document> col = db.getCollection("MasterAdmin");
+        //for(int i = 0 ; i < col.)
         for(Document curr: col.find(Filters.eq("Requests.Status", "Pending"))){
             data += curr.toJson() + ",";
         }
@@ -114,6 +117,14 @@ public class MongoConnect {
         return data;
     }
 
+    public static String getRequestInfoUnderAdmin(String ID){
+        String data = "[";
+        MongoCollection<Document> col = db.getCollection("Requests");
+        Document temp = col.find(Filters.eq("_id", new ObjectId(ID))).first();
+        data += temp.toJson() + ",";
+        data += "]";
+        return data;
+    }
     public static void InsertRequest(String fromem,String toem, String sub, String reason, String dtfrom, String dtto, String type){
         Document d =collectionMaster.find(Filters.eq("Email", fromem)).first();
         String name = d.getString("FirstName");
