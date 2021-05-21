@@ -109,6 +109,7 @@ function CheckValidityRequestForm() {
   em.removeClass("is-valid");
   let isemvalid = true;
   let issubjectvalid = true;
+  let isdatevalid = true;
   if (em.val() === "") {
     isemvalid = false;
     em.addClass("is-invalid");
@@ -130,7 +131,23 @@ function CheckValidityRequestForm() {
     sub.addClass("is-invalid");
     $("#invalid-for-Subject1").html("Subject cannot be empty!");
   }
-  
-
+  else{
+    issubjectvalid = true;
+    sub.addClass("is-valid");
+  }
+  let today = new Date();
+  let dtfrom = new Date($("#dtfrom").val());
+  let dtto = new Date($("#dtto").val());
+  let dt = $("#dtfrom")
+  dt.removeClass("is-invalid")
+  dt.removeClass("is-valid")
+  if(dtfrom > today && (dtto >= dtfrom || dtto.getDate() === dtfrom.getDate())){
+    isdatevalid = true;
+    dt.addClass("is-valid");
+  }
+  else{
+    isdatevalid = false;
+    dt.addClass("is-invalid");
+  }
   return isemvalid && issubjectvalid;
 }

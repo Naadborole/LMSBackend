@@ -63,4 +63,12 @@
         <servlet-name>MasterAdminListServ</servlet-name>
         <url-pattern>/MasterAdminList</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RequestEnter</servlet-name>
+        <servlet-class>RequestEnter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestEnter</servlet-name>
+        <url-pattern>/ReqEnter</url-pattern>
+    </servlet-mapping>
 </web-app>

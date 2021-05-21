@@ -115,7 +115,19 @@ public class MongoConnect {
     }
 
     public static void InsertRequest(String fromem,String toem, String sub, String reason, String dtfrom, String dtto, String type){
-
+        Document d =collectionMaster.find(Filters.eq("Email", fromem)).first();
+        String name = d.getString("FirstName");
+        name += " " + d.getString("LastName");
+        Document doc = new Document("From", fromem);
+        doc = doc.append("To", toem);
+        doc = doc.append("Status", "Pending");
+        doc = doc.append("DateFrom", dtfrom);
+        doc = doc.append("DateTo", dtto);
+        doc = doc.append("Subject", sub);
+        doc = doc.append("Reason", reason);
+        doc = doc.append("Type", type);
+        doc = doc.append("Name", name);
+        Collection req = 
     }
 
 }

@@ -24,7 +24,7 @@
         <div class="card card-pad" style="border-color: #e00">
           <h3 style="color: #e00; font-weight: 800">Leave Application</h3>
           <br />
-          <form class="needs-validation-1" id="form1">
+          <form class="needs-validation-1" id="form1" action="ReqEnter" method = "POST">
             <div class="mb-3 form-outline">
               <div class="form-row">
                 <div class = "form-group col-6">
@@ -62,7 +62,7 @@
             </div>
             <div class="mb-3">
               <label for="Subject1" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="Subject1" />
+              <input type="text" class="form-control" id="Subject1" name = "sub"/>
               <div class="valid-feedback" id="valid-for-Subject1">
                 Looks good!
               </div>
@@ -79,7 +79,8 @@
                   <input
                     class="form-control"
                     type="date"
-                    id="example-date-input1"
+                    id="dtfrom"
+                    name = "dtfrom"
                   />
                 </div>
                 <div class="col-sm-2 col-lg-2 text-center my-auto">to</div>
@@ -87,7 +88,8 @@
                   <input
                     class="form-control"
                     type="date"
-                    id="example-date-input2"
+                    id="dt2"
+                    name = "dtto"
                   />
                 </div>
               </div>
@@ -100,6 +102,7 @@
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
+                name = "reason"
               ></textarea>
             </div>
             <br />
@@ -527,6 +530,16 @@ function updateUIList(Applist, indexstart){
       }
     }
 }
+
+document.getElementById("subtn").addEventListener("click", function(event){
+  if(!CheckValidityRequestForm()){
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  else{
+  }
+})
+
   </script>
   <script>
    $(".selectpicker").selectpicker("refresh");
