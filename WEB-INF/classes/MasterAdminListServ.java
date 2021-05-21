@@ -7,13 +7,13 @@ import com.mongodb.client.model.Filters;
 
 public class MasterAdminListServ extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-        /*MongoConnect c= new MongoConnect();
-        String email = req.getParameter("email").toString().trim();
+        MongoConnect c= new MongoConnect();
+        /*String email = req.getParameter("email").toString().trim();
         if(email == null){
             req.setAttribute("error", "Session expired please login again");
             req.getRequestDispatcher("AdminIndex.jsp").forward(req, response);    
         }*/
-        String data = MongoConnect.getMembersUnderAdmin("masteradmin@lmsSys2104.com");
+        String data = MongoConnect.getMasterAdminList();
         req.setAttribute("arrMasterAdmin", data);
         req.getRequestDispatcher("MasterAdmin.jsp").forward(req, response);
     }

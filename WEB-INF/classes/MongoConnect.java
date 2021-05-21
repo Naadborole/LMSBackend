@@ -2,7 +2,7 @@ import java.io.*;
 import com.mongodb.client.*;
 import org.bson.*;
 import org.bson.types.ObjectId;
-
+import java.util.*;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 
@@ -141,6 +141,20 @@ public class MongoConnect {
         doc = doc.append("Name", name);
         MongoCollection<Document> c = db.getCollection("Requests");
         c.insertOne(doc);
+    }
+
+    public static String getMasterAdminList(){
+        String found = "[";
+        Document doc = collectionMaster.find(Filters.eq("Email", "masteradmin@lmsSys2104.com")).first();
+        ArrayList<Document> a = (ArrayList<Document>)doc.get("Requests");
+        for(int i=0; i<a.size(); i++){
+            Document d = a.get(i);
+            if(d.getString("Status").equals("Pending")){
+                found += d.toJson() + ",";
+            }
+        }
+        found += "]";
+        return found;
     }
 
 }
