@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leave Management System</title>
     <link rel="stylesheet" href="Basic.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="validation.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   </head>
 
   <body>
@@ -31,18 +26,38 @@
           <br />
           <form class="needs-validation-1" id="form1">
             <div class="mb-3 form-outline">
-              <label for="Email1" class="form-label">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="Email1"
-                aria-describedby="emailHelp"
-              />
-              <div class="valid-feedback" id="valid-for-Email1">
-                Looks good!
-              </div>
-              <div class="invalid-feedback" id="invalid-for-Email1">
-                Please choose an upcoming date.
+              <div class="form-row">
+                <div class = "form-group col-6">
+                  <label for="Email1" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="Email1"
+                    aria-describedby="emailHelp"
+                    name = "toem"
+                  />
+                  <div class="valid-feedback" id="valid-for-Email1">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="invalid-for-Email1">
+                    Please choose an upcoming date.
+                  </div>
+                </div>
+                <div class = "form-group col-6">
+                  <label for="typeselect" class="form-label">Type</label>
+                  <select class="form-control selectpicker" id="typeselect" name = "type">
+                    <option value="Medical">Medical</option>
+                    <option value="Maternity">Maternity</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="valid-feedback" id="valid-for-Email1">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="invalid-for-Email1">
+                    Please choose a valid option
+                  </div>
+                </div>  
               </div>
             </div>
             <div class="mb-3">
@@ -444,7 +459,6 @@
       $("#next").attr("disabled", true);
     }
     updateUIList(AppList, 0);
-
     function prev(){
       currstartind -= 3;
       currstartind = Math.max(0, currstartind);
@@ -514,5 +528,7 @@ function updateUIList(Applist, indexstart){
     }
 }
   </script>
-  <script src="UpdateRecentRequestList.js"></script>
+  <script>
+   $(".selectpicker").selectpicker("refresh");
+  </script>
 </html>

@@ -113,4 +113,9 @@ public class MongoConnect {
         data += "]";
         return data;
     }
+
+    public static void InsertRequest(String fromem,String toem, String sub, String reason, String dtfrom, String dtto, String type){
+
+    }
+
 }
