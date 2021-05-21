@@ -61,12 +61,11 @@
   </body>
 
    <script>
-    const arrData = ${arrMasterAdmin};
-    console.log(arrData);
+    const arrMasterAdmin = ${arrMasterAdmin};
     insertList();
     function insertList()
     {
-      for(var i = 0 ; i < arrData.length ; i++)
+      for(var i = 0 ; i < arrMasterAdmin.length ; i++)
       {
         var div1 = document.createElement('div');
         div1.className = 'card card-pad h-auto w-75 mx-auto card-shadow';  
