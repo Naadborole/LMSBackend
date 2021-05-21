@@ -2,10 +2,18 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 import java.io.*;
 
-
 public class RequestEnter extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException{
-        String email = (String)req.getSession().getAttribute("email");
+        MongoConnect c = new MongoConnect();
+        Cookie ck[] = req.getCookies();
+        String email = null;
+        for(int i=0; i<ck.length; i++){
+            if(ck[i].getName().equals("user")){
+                email = ck[i].getValue();
+            }
+        }
+        PrintWriter out = response.getWriter();
+        System.out.println(email);
         String toemail = req.getParameter("toem");
         String subject = req.getParameter("sub");
         String dtfrom = req.getParameter("dtfrom");

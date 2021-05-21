@@ -126,9 +126,10 @@ public class MongoConnect {
         return data;
     }
     public static void InsertRequest(String fromem,String toem, String sub, String reason, String dtfrom, String dtto, String type){
-        Document d =collectionMaster.find(Filters.eq("Email", fromem)).first();
-        String name = d.getString("FirstName");
-        name += " " + d.getString("LastName");
+        Document d =collection.find(Filters.eq("Email", fromem)).first();
+        String name = d.get("FirstName").toString();
+        name += " " + d.get("LastName").toString();
+        System.err.println(name);
         Document doc = new Document("From", fromem);
         doc = doc.append("To", toem);
         doc = doc.append("Status", "Pending");
@@ -138,7 +139,8 @@ public class MongoConnect {
         doc = doc.append("Reason", reason);
         doc = doc.append("Type", type);
         doc = doc.append("Name", name);
-         MongoCollection<Document> c = db.getCollection("Requests");
+        MongoCollection<Document> c = db.getCollection("Requests");
+        c.insertOne(doc);
     }
 
 }
