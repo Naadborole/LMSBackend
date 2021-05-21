@@ -29,7 +29,7 @@
                 <h3 style="color: #e00; font-weight: 800">Pending Leaves</h3>
                 <br />
                 <div class="row h-25" style="margin-bottom: 15px">
-                  <div class="card w-100 h-100 card-shadow">
+                  <div class="card w-100 h-100 card-shadow" id="click1">
                     <div class="card-body" style="padding: 0px" id="entry1">
                       <div class="row h-100" style="margin: 0px">
                         <div class="col d-flex flex-column justify-content-lg-center"
@@ -106,7 +106,7 @@
                 </div>
                 <!-- SECOND ENTRY -->
                 <div class="row h-25" style="margin-bottom: 15px">
-                  <div class="card w-100 h-100 card-shadow">
+                  <div class="card w-100 h-100 card-shadow" id="click2">
                     <div class="card-body" style="padding: 0px" id="entry2">
                       <div class="row h-100" style="margin: 0px">
                         <div class="col d-flex flex-column justify-content-lg-center"
@@ -183,7 +183,7 @@
                 </div>
                 <!-- Third Entry -->
                 <div class="row h-25">
-                  <div class="card w-100 h-100 card-shadow">
+                  <div class="card w-100 h-100 card-shadow" id="click3">
                     <div class="card-body" style="padding: 0px" id="entry3">
                       <div class="row h-100" style="margin: 0px">
                         <div class="col d-flex flex-column justify-content-lg-center"
@@ -392,6 +392,10 @@ function updateUIList(AppList, indexstart){
     let entrynum = 1;
     for(let i = indexstart; i<=indexEnd; i++){
       let obj = AppList[i];
+      let Id = obj._id.$oid;
+      $("#click"+entrynum).click(function() {
+        window.location.href = "http://localhost:8080/LMSBackend/MemberRequestInfo?id="+Id;
+      });
       $("#entry"+entrynum).show();
       $("#name"+entrynum).html(obj.Name);
       $("#email"+entrynum).html(obj.From);
