@@ -67,6 +67,9 @@
               <br />
               <button type="submit" id = "subtn" class="btn btn-red center-btn" onclick="checkValidityLogin('Email1', 'passwd1')">Login</button>
             </form>
+            <br>
+            <span> Not an employee?<a href = "/ProjectBackend/AdminIndex.jsp"> Login as admin</a></span>
+            
             <!-- LOGIN FORM END
             --------
             ----------
