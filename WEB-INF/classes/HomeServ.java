@@ -8,6 +8,7 @@ public class HomeServ extends HttpServlet {
         MongoConnect c= new MongoConnect();
         String email = (String)req.getSession().getAttribute("email");
         if(email == null){
+            
             req.setAttribute("error", "Session expired please login again");
             req.getRequestDispatcher("index.jsp").forward(req, response);    
         }

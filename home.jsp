@@ -118,8 +118,8 @@
           <br />
           <!-- First Entry -->
           <div class="row h-25" style="margin-bottom: 15px">
-            <div class="card w-100 h-100 card-shadow">
-              <div class="card-body" style="padding: 0px" id="entry1">
+            <div class="card w-100 h-100 card-shadow" id="entry1">
+              <div class="card-body" style="padding: 0px" >
                 <div class="row h-100" style="margin: 0px">
                   <div
                     class="col d-flex flex-column justify-content-lg-center"
@@ -227,8 +227,8 @@
           </div>
           <!-- SECOND ENTRY -->
           <div class="row h-25" style="margin-bottom: 15px">
-            <div class="card w-100 h-100 card-shadow">
-              <div class="card-body" style="padding: 0px" id="entry2">
+            <div class="card w-100 h-100 card-shadow" id="entry2">
+              <div class="card-body" style="padding: 0px" >
                 <div class="row h-100" style="margin: 0px">
                   <div
                     class="col d-flex flex-column justify-content-lg-center"
@@ -336,8 +336,8 @@
           </div>
           <!-- Third Entry -->
           <div class="row h-25">
-            <div class="card w-100 h-100 card-shadow">
-              <div class="card-body" style="padding: 0px" id="entry3">
+            <div class="card w-100 h-100 card-shadow"  id="entry3">
+              <div class="card-body" style="padding: 0px">
                 <div class="row h-100" style="margin: 0px">
                   <div
                     class="col d-flex flex-column justify-content-lg-center"
@@ -511,6 +511,7 @@ function updateUIList(Applist, indexstart){
       $("#Status"+entrynum).removeClass("text-info");
       $("#Status"+entrynum).removeClass("text-danger");
       $("#Status"+entrynum).removeClass("text-success");
+      console.log(obj._id.$oid);
       switch(obj.Status){
         case "Approved":{
           $("#Status"+entrynum).addClass("text-success");
@@ -522,6 +523,9 @@ function updateUIList(Applist, indexstart){
           $("#Status"+entrynum).addClass("text-danger");
         } break;
       }
+      $("#entry" + entrynum).click(function(){
+        window.location.replace("http://localhost/ProjectBackend/Request.php?reqid=" + obj._id.$oid);
+      })
       entrynum++;
     }
     if(entrynum < 4){

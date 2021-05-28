@@ -394,7 +394,7 @@ function updateUIList(AppList, indexstart){
       let obj = AppList[i];
       let Id = obj._id.$oid;
       $("#click"+entrynum).click(function() {
-        window.location.href = "http://localhost:8080/LMSBackend/MemberRequestInfo?id="+Id;
+        window.location.href = "MemberRequestInfo?id="+Id;
       });
       $("#entry"+entrynum).show();
       $("#name"+entrynum).html(obj.Name);
